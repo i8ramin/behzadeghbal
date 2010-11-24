@@ -1,0 +1,4 @@
+$('#candles').html('<%= escape_javascript( render :partial => "note", :collection => @notes, :as => :note ) %>');
+  
+<%= render 'tooltip.js' %>
+$('#candles .candle:first').trigger('click');

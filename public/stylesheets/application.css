@@ -5,25 +5,47 @@ body {
 }
 a, a:link {
 }
-
+h1,h2,h3 {
+  margin: 0;
+}
 form .placeholder {
   color: #999;
 }
 
 #wrapper {
-  width: 600px;
-  margin: 50px auto;
+  width: 960px;
+  margin: 30px auto;
   position: relative;
 }
+
+#about, #aside {
+  float: left;
+  margin: 0 10px;
+}
+#about {
+  width: 480px;
+}
+#aside {
+  width: 420px;
+}
+
 #info {
+  margin: 20px 0;
   text-align: center;
   font-family: 'OFL Sorts Mill Goudy TT', times, serif;
+}
+#info h1 {
+  margin: 10px 0;
+  line-height: 100%;
+}
+#info p {
+  margin: 0;
 }
 
 #frame {
   width: 476px;
   height: 542px;
-  margin: 30px auto 0;
+  margin: 0 auto 20px;
   background: transparent url(/images/frame.gif) no-repeat;
 }
 #frame img {
@@ -32,36 +54,35 @@ form .placeholder {
 
 
 #form {
-  width: 456px;
-  margin: 20px auto;
+  width: 350px;
+  margin: 0 auto 20px;
   text-align: center;
+  clear: left;
 }
 #form h2 {
-  margin: 10px 0;
+  margin-bottom: 10px;
   font-size: 90%;
   font-weight: normal;
   text-align: center;
 }
 #form form {
-  width: 400px;
+  width: 350px;
   margin: 0 auto;
 }
-#form form div {
+
+form div {
   margin-top: 7px;
 }
-#form form input.text,
-#form form textarea {
-  width: 350px;
+form input.text,
+form textarea {
+  width: 300px;
   padding: 3px;
   border: 1px solid #ccc;
 }
 
 #candles {
   position: relative;
-  overflow: hidden;
-  width: 650px;
   margin: 0 auto;
-  text-align: center;
 }
 #candles .candle {
   text-align: center; 
@@ -112,7 +133,11 @@ form .placeholder {
 .tooltip em {
   font-size: 85%;
   color: #666;
-  margin-top: 7px;
-  display: block;
-  text-align: right;
+}
+.tooltip a.edit {
+  font-size: 85%;
+  color: #69c;
+}
+.tooltip form {
+  display: none;
 }

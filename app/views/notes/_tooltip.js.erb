@@ -1,20 +1,18 @@
-$('#candles .candle[title]').tooltip({
+$('#candles .candle').tooltip({
   effect: 'slide',
+  offset: [20, 0],
+  delay: 500,
+  relative: true,
   events: {
     def: 'click mouseenter, mouseleave'
   },
-  onBeforeShow: function(e) {
-    var tt = this.getTip(),
-        t  = this.getTrigger(),
-        language = t.data('language'),
-        data = t.data('title').split('|'),
-        from = data[0].length ? $('<em>' + data[0] + '</em>') : '',
-        note = $('<p>' + data[1] + '</p>');
-    
-    tt.html(note).append(from);
-    
-    if (language == 'farsi') {
-      tt.addClass('rtl');
-    }
+  onHide: function(e) {
+    this.getTip().find('form').hide();
   }
+}).dynamic();
+
+$('.tooltip a.edit').click(function(e) {
+  e.preventDefault();
+  
+  $(this).next().show();
 });

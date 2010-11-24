@@ -7,8 +7,11 @@
   $('#flash_notice').html('<%= escape_javascript(flash[:notice])%>');
   $(':input:not(input[type=submit])').val('');
   
-  $('#candles').html('<%= escape_javascript( render @notes ) %>');
+  $('#candles').html('<%= escape_javascript( render :partial => "note", :collection => @notes, :as => :note ) %>');
   
   <%= render 'tooltip.js' %>
-  $('#candles .candle:last').trigger('click');
+  var c = $('#candles .candle:last');
+  $('html').animate({scrollTop : c.offset().top}, function() {
+    c.trigger('click');
+  });
 <% end -%>

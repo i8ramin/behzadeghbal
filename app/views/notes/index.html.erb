@@ -1,37 +1,35 @@
-<div id="info">
-  <h1>
-    <div class='fa'>بهزاد اقبال</div>
-    Behzad Eghbal
-  </h1>
-  <p>
-    1983 - 2010<br/>
-    Tehran, Iran<br/>
-    تهران ایران
-  </p>
+<div id="about">
+  <div id="frame">
+    <img src="/images/beh050.jpg" alt="Behzad Eghbal" />
+  </div>
+  
+  <div id="candles">
+    <%= render :partial => 'note', :collection => @notes, :as => :note %>
+  </div>
 </div>
 
-<div id="frame">
-  <img src="/images/beh050.jpg" alt="Behzad Eghbal" />
-</div>
-
-<div id="form">
-  <h2>
-    Enter a note and light a candle
-    <div class='fa'>برای بهزاد یک پیام بزار و شم روشن کن</div>
-  </h2>
-  <%= render 'form' %>
-</div>
-
-<div id="candles">
-  <%= render @notes %>
+<div id="aside">
+  <div id="info">
+    <h1>
+      <div class='fa'></div>
+      Behzad Eghbal
+    </h1>
+    <p>
+      <!--April 29,--> 1983 - <!--November 10,--> 2010
+    </p>
+  </div>
+  
+  <div id="form">
+    <h2>
+      Enter a note and light a candle
+      <div class='fa'>برای بهزاد یک پیام بزار و شم روشن کن</div>
+    </h2>
+    <%= render :partial => 'form', :locals => { :note => @note } %>
+  </div>
 </div>
 
 <script type="text/javascript">
 (function($) {
   <%= render 'tooltip.js' %>
-  
-  // $('#form h2').click(function() {
-  //   $(this).next().slideToggle();
-  // });
 })(jQuery);
 </script>

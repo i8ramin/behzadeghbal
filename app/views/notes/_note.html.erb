@@ -1,1 +1,9 @@
-<div class="candle candle-<%= note.candle %>" title="<%= note.from %>|<%= note.content %>" data-language="<%= note.language %>"><img src="/images/flame-<%= note.flame %>.gif" /></div>
+<div class="candle candle-<%= note.candle %>"><img src="/images/flame-<%= note.flame %>.gif" /></div>
+<div class="tooltip <%= note.language == 'farsi' ? 'rtl' : '' %> <%= note.editable ? 'editable' : '' %>">
+  <p><%= note.content %> <em><%= note.from %></em></p>
+  
+  <% if note.editable %>
+    <a href="#edit" class="edit">edit</a>
+    <%= render :partial => 'form', :locals => { :note => note } %>
+  <% end %>
+</div>

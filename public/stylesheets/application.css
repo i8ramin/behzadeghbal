@@ -101,7 +101,7 @@ form .placeholder {
   -moz-box-shadow: rgba(0,0,0,.7) 0 0 5px;
   box-shadow: rgba(0,0,0,.7) 0 0 5px;
 }
-.tooltip.rtl {
+.tooltip.rtl p {
   direction: rtl;
 }
 .tooltip p {

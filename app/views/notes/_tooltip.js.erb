@@ -1,22 +1,20 @@
-(function($) {
-  $('#candles .candle[title]').tooltip({
-    effect: 'slide',
-    events: {
-      def: 'click mouseenter, mouseleave'
-    },
-    onBeforeShow: function(e) {
-      var tt = this.getTip(),
-          t  = this.getTrigger(),
-          language = t.data('language'),
-          data = t.data('title').split('|'),
-          from = data[0].length ? $('<em>' + data[0] + '</em>') : '',
-          note = $('<p>' + data[1] + '</p>');
-      
-      tt.html(note).append(from);
-      
-      if (language == 'farsi') {
-        tt.addClass('rtl');
-      }
+$('#candles .candle[title]').tooltip({
+  effect: 'slide',
+  events: {
+    def: 'click mouseenter, mouseleave'
+  },
+  onBeforeShow: function(e) {
+    var tt = this.getTip(),
+        t  = this.getTrigger(),
+        language = t.data('language'),
+        data = t.data('title').split('|'),
+        from = data[0].length ? $('<em>' + data[0] + '</em>') : '',
+        note = $('<p>' + data[1] + '</p>');
+    
+    tt.html(note).append(from);
+    
+    if (language == 'farsi') {
+      tt.addClass('rtl');
     }
-  });
-})(jQuery);
+  }
+});

@@ -1,10 +1,5 @@
 <%= form_for(@note, :remote => true) do |f| %>
-  <h2>Enter a note and light a candle</h2>
-  <p>
-    <%= f.text_field :from, :placeholder => 'from' %>
-  </p>
-  <p>
-    <%= f.text_area :content, :rows => 3 %>
-  </p>
-  <p><%= f.submit 'Light candle' %></p>
+  <div><%= f.text_area :content, :rows => 3 %></div>
+  <div><%= f.text_field :from, :class => 'text', :placeholder => 'from ( از طرفه )' %></div>
+  <div><%= f.submit 'Light Candle | شم روشن کن' %></div>
 <% end %>

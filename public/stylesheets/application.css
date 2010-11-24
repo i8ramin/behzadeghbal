@@ -30,16 +30,30 @@ form .placeholder {
   margin: 74px;
 }
 
-#new_note {
+
+#form {
   width: 456px;
-  background-color: #333;
-  padding: 10px;
-  margin: 0 auto 20px;
+  margin: 20px auto;
+  text-align: center;
 }
-#new_note h2 {
-  font-size: 100%;
+#form h2 {
+  margin: 10px 0;
+  font-size: 90%;
+  font-weight: normal;
+  text-align: center;
 }
-#note_submit {
+#form form {
+  width: 400px;
+  margin: 0 auto;
+}
+#form form div {
+  margin-top: 7px;
+}
+#form form input.text,
+#form form textarea {
+  width: 350px;
+  padding: 3px;
+  border: 1px solid #ccc;
 }
 
 #candles {

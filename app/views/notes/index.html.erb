@@ -1,19 +1,37 @@
 <div id="info">
-  <h1>Behzad Eghbal</h1>
-  1983 - 2010<br/>
-  Tehran, Iran
+  <h1>
+    <div class='fa'>بهزاد اقبال</div>
+    Behzad Eghbal
+  </h1>
+  <p>
+    1983 - 2010<br/>
+    Tehran, Iran<br/>
+    تهران ایران
+  </p>
 </div>
 
 <div id="frame">
   <img src="/images/beh050.jpg" alt="Behzad Eghbal" />
 </div>
 
-<%= render 'form' %>
+<div id="form">
+  <h2>
+    Enter a note and light a candle
+    <div class='fa'>برای بهزاد یک پیام بزار و شم روشن کن</div>
+  </h2>
+  <%= render 'form' %>
+</div>
 
 <div id="candles">
   <%= render @notes %>
 </div>
 
 <script type="text/javascript">
-<%= render 'tooltip.js' %>
+(function($) {
+  <%= render 'tooltip.js' %>
+  
+  // $('#form h2').click(function() {
+  //   $(this).next().slideToggle();
+  // });
+})(jQuery);
 </script>

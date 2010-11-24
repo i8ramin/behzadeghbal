@@ -1,0 +1,14 @@
+<% if @note.errors.any? -%>
+  $('#flash_notice').hide();
+  $('#note_errors').html('<%= escape_javascript(error_messages_for(@note))%>');
+  $('#note_errors').show();
+<% else -%>
+  $('#note_errors').hide();
+  $('#flash_notice').html('<%= escape_javascript(flash[:notice])%>');
+  $(':input:not(input[type=submit])').val('');
+  
+  $('#candles').html('<%= escape_javascript( render @notes ) %>');
+  
+  <%= render 'tooltip.js' %>
+  $('#candles .candle:last').trigger('click');
+<% end -%>

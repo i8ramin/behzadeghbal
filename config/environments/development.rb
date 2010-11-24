@@ -22,5 +22,8 @@ Behzad::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  # Google JS API Key
+  config.google_jsapi_key = 'ABQIAAAAmcMQpIU_mF69AtNIiBwHQxTJQa0g3IQ9GZqIMmInSLzwtGDKaBSSrtMmih31lIGsbnaiCR3bVkKx3Q'
 end
 

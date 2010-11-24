@@ -39,6 +39,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.9)
+      rake
+    nifty-generators (0.4.2)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -64,10 +67,14 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    whatlanguage (1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  mocha
+  nifty-generators
   rails (= 3.0.2)
   sqlite3-ruby
+  whatlanguage

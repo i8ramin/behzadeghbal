@@ -46,4 +46,7 @@ Behzad::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # Google JS API Key
+  config.google_jsapi_key = 'ABQIAAAAmcMQpIU_mF69AtNIiBwHQxRN7rhMBzBerkGWAQUud709shahSxTtzbZNxhUvF4rU9RfzEMSrLoza6g'
 end

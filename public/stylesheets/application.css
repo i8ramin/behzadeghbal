@@ -110,7 +110,13 @@ form textarea {
   background-image: url(/images/candles.gif);
   background-repeat: no-repeat;
   cursor: pointer;
+  opacity: .7;
 }
+.candle:hover {
+  opacity: 1;
+  
+}
+
 .candle-1 { width: 36px; height: 100px; margin-top: 22px; background-position: -2px bottom; }
 .candle-2 { width: 44px; height: 82px;  margin-top: 40px; background-position: -40px bottom; }
 .candle-3 { width: 45px; height: 122px; margin-top: 0;    background-position: -85px bottom; }

@@ -8,10 +8,12 @@ gem 'rails', '3.0.2'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'nifty-generators'
 gem 'whatlanguage'
+gem 'dalli'
 # gem 'uuid'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'mongrel'
 
 # Deploy with Capistrano
 # gem 'capistrano'

@@ -7,19 +7,11 @@
     
     <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js' %>
     <%= javascript_include_tag 'rails', 'jquery.tools.min', 'jquery.placeholder.min', 'application' %>
+
+    <meta charset="utf-8">
     <%= csrf_meta_tag %>
     
     <script src="https://www.google.com/jsapi?key=<%= Rails.configuration.google_jsapi_key %>" type="text/javascript"></script>
-    <script type="text/javascript">
-      // Load the Google Onscreen Keyboard API
-      // google.load("elements", "1", {
-      //     packages: "keyboard"
-      // });
-      // 
-      // function onLoad() {
-      //   new google.elements.keyboard.Keyboard([google.elements.keyboard.LayoutCode.PERSIAN], ['note_content']);
-      // }
-    </script>
     
     <%= yield(:head) %>
   </head>

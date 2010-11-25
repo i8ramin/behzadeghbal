@@ -1,5 +1,7 @@
 class NotesController < ApplicationController
   respond_to :html, :js
+  caches_page :index
+  cache_sweeper :note_sweeper
   
   def index
     @note = Note.new

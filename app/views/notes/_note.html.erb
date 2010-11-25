@@ -1,9 +1,15 @@
-<div class="candle candle-<%= note.candle %>"><img src="/images/flame-<%= note.flame %>.gif" /></div>
-<div class="note tooltip <%= note.language == 'farsi' ? 'rtl' : '' %> <%= note.editable ? 'editable' : '' %>">
-  <p><%= note.content %> <em><%= note.from %></em></p>
+<div id="candle-<%= note.id %>" class="candle-wrapper">
+  <div class="candle candle-<%= note.candle %>"><img src="/images/flame-<%= note.flame %>.gif" /></div>
+  <div class="note tooltip <%= note.language == 'farsi' ? 'rtl' : '' %> <%= note.editable ? 'editable' : '' %>">
+    <p><%= note.content %> <em><%= note.from %></em></p>
   
-  <% if note.editable %>
-    <a href="#edit" class="edit">edit</a>
-    <%= render :partial => 'form', :locals => { :note => note } %>
-  <% end %>
+    <% if note.editable %>
+      <div class="action">
+        <%= link_to 'Edit', edit_note_path(note), :class => 'edit' %> |
+        <%= link_to 'Delete', note, :class => 'delete', :method => :delete, :remote => true %>
+      </div>
+    
+      <%= render :partial => 'form', :locals => { :note => note } %>
+    <% end %>
+  </div>
 </div>

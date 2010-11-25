@@ -3,6 +3,7 @@ class NotesController < ApplicationController
   caches_page :index
   cache_sweeper :note_sweeper
   
+  # GET /notes
   def index
     @note = Note.new
     sorted_notes
@@ -12,6 +13,7 @@ class NotesController < ApplicationController
     respond_with(@note, @notes)
   end
   
+  # POST /notes
   def create
     @note = Note.new(params[:note])
     sorted_notes
@@ -31,6 +33,7 @@ class NotesController < ApplicationController
     respond_with(@note, @notes)
   end
   
+  # PUT /notes/1
   def update
     @note = Note.find(params[:id])
     @note.update_attributes(params[:note])
@@ -38,6 +41,16 @@ class NotesController < ApplicationController
     editable_notes(sorted_notes)
     
     respond_with(@note, @notes)
+  end
+  
+  # DELETE /notes/1
+  def destroy
+    @note = Note.find(params[:id])
+    
+    if (cookies['note-' + @note.id.to_s] == @note.id.to_s)
+      @note_id = @note.id
+      @note.destroy
+    end
   end
   
   private

@@ -1,14 +1,4 @@
 <div id="about">
-  <div id="frame">
-    <img src="/images/beh050.jpg" alt="Behzad Eghbal" />
-  </div>
-  
-  <div id="candles">
-    <%= render :partial => 'note', :collection => @notes, :as => :note %>
-  </div>
-</div>
-
-<div id="aside">
   <div id="info">
     <h1>
       <div class='fa'></div>
@@ -36,6 +26,16 @@
     </h2>
     <%= render :partial => 'form', :locals => { :note => @note } %>
   </div>
+</div>
+
+<div id="aside">
+  <div id="frame">
+    <img src="/images/beh050.jpg" alt="Behzad Eghbal" />
+  </div>
+</div>
+
+<div id="candles">
+  <%= render :partial => 'note', :collection => @notes, :as => :note %>
 </div>
 
 <script type="text/javascript">

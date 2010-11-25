@@ -23,10 +23,10 @@ form .placeholder {
   margin: 0 10px;
 }
 #about {
-  width: 485px;
+  width: 415px;
 }
 #aside {
-  width: 415px;
+  width: 485px;
 }
 
 #info {
@@ -94,6 +94,7 @@ form textarea {
 #candles {
   position: relative;
   margin: 0 auto;
+  clear: left;
 }
 
 .candle-wrapper {

@@ -11,7 +11,8 @@
   
   <%= render 'tooltip.js' %>
   var c = $('#candles .candle:last');
-  $('html').animate({scrollTop : c.offset().top}, function() {
+  
+  $('html,body').animate({scrollTop : c.offset().top}, function() {
     c.trigger('click');
   });
 <% end -%>

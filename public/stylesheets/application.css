@@ -23,16 +23,18 @@ form .placeholder {
   margin: 0 10px;
 }
 #about {
-  width: 480px;
+  width: 485px;
 }
 #aside {
-  width: 420px;
+  width: 415px;
 }
 
 #info {
   margin: 20px 0;
+  padding-bottom: 20px;
   text-align: center;
   font-family: 'OFL Sorts Mill Goudy TT', times, serif;
+  border-bottom: 1px solid #333;
 }
 #info h1 {
   margin: 10px 0;
@@ -40,6 +42,12 @@ form .placeholder {
 }
 #info p {
   margin: 0;
+}
+
+#notable {
+  padding: 0 20px 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
 }
 
 #frame {
@@ -84,7 +92,8 @@ form textarea {
   position: relative;
   margin: 0 auto;
 }
-#candles .candle {
+
+.candle {
   text-align: center; 
   float: left;
   margin-bottom: 15px;
@@ -95,7 +104,6 @@ form textarea {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-
 .candle-1 { width: 36px; height: 100px; margin-top: 22px; background-position: -2px bottom; }
 .candle-2 { width: 44px; height: 82px;  margin-top: 40px; background-position: -40px bottom; }
 .candle-3 { width: 45px; height: 122px; margin-top: 0;    background-position: -85px bottom; }
@@ -122,22 +130,24 @@ form textarea {
   -moz-box-shadow: rgba(0,0,0,.7) 0 0 5px;
   box-shadow: rgba(0,0,0,.7) 0 0 5px;
 }
-.tooltip.rtl p {
-  direction: rtl;
-}
-.tooltip p {
-  margin: 0;
-  font-size: 95%;
-  line-height: 130%;
-}
-.tooltip em {
-  font-size: 85%;
-  color: #666;
-}
 .tooltip a.edit {
   font-size: 85%;
   color: #69c;
 }
 .tooltip form {
   display: none;
+}
+
+.rtl p {
+  direction: rtl;
+}
+.note p {
+  margin: 0;
+  font-size: 95%;
+  line-height: 130%;
+}
+.note em {
+  padding: 0 5px;
+  font-size: 85%;
+  color: #666;
 }

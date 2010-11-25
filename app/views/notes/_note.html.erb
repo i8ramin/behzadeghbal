@@ -1,5 +1,5 @@
 <div class="candle candle-<%= note.candle %>"><img src="/images/flame-<%= note.flame %>.gif" /></div>
-<div class="tooltip <%= note.language == 'farsi' ? 'rtl' : '' %> <%= note.editable ? 'editable' : '' %>">
+<div class="note tooltip <%= note.language == 'farsi' ? 'rtl' : '' %> <%= note.editable ? 'editable' : '' %>">
   <p><%= note.content %> <em><%= note.from %></em></p>
   
   <% if note.editable %>

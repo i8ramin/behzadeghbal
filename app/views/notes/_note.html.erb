@@ -3,7 +3,7 @@
   <div class="note tooltip <%= note.language == 'farsi' ? 'rtl' : '' %> <%= note.editable ? 'editable' : '' %>">
     <p><%= note.content %> <em><%= note.from %></em></p>
   
-    <% if note.editable %>
+    <% if false #note.editable %>
       <div class="action">
         <%= link_to 'Edit', edit_note_path(note), :class => 'edit' %> |
         <%= link_to 'Delete', note, :class => 'delete', :method => :delete, :remote => true %>

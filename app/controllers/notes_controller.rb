@@ -8,64 +8,64 @@ class NotesController < ApplicationController
     @note = Note.new
     sorted_notes
     
-    editable_notes(sorted_notes)
+    sorted_notes
     
     respond_with(@note, @notes)
   end
   
   # POST /notes
   def create
-    @note = Note.new(params[:note])
     sorted_notes
+    @note = Note.new(params[:note])
     
-    # detect language
-    @note.language = @note.content.language.to_s
+    @note.from.strip!
+    @note.content.strip!
     
-    @note.candle = rand(6) + 1
-    @note.flame  = rand(4) + 1
+    note = Note.find_by_from(@note.from)
     
-    if @note.save
-      cookies['note-' + @note.id.to_s] = @note.id
-      @note.editable = true
-      @notes << @note
+    if note && note.content == @note.content
+      # existing identical note, ignore
+    else
+      # detect language
+      @note.language = @note.content.language.to_s
+  
+      @note.candle = rand(6) + 1
+      @note.flame  = rand(4) + 1
+  
+      if @note.save
+        # cookies['note-' + @note.id.to_s] = @note.id
+        # @note.editable = true
+        @notes << @note
+      end
     end
     
     respond_with(@note, @notes)
   end
   
   # PUT /notes/1
-  def update
-    @note = Note.find(params[:id])
-    @note.update_attributes(params[:note])
-    
-    editable_notes(sorted_notes)
-    
-    respond_with(@note, @notes)
-  end
+  # def update
+  #   @note = Note.find(params[:id])
+  #   @note.update_attributes(params[:note])
+  #   
+  #   sorted_notes
+  #   
+  #   respond_with(@note, @notes)
+  # end
   
   # DELETE /notes/1
-  def destroy
-    @note = Note.find(params[:id])
-    
-    if (cookies['note-' + @note.id.to_s] == @note.id.to_s)
-      @note_id = @note.id
-      @note.destroy
-    end
-  end
+  # def destroy
+  #   @note = Note.find(params[:id])
+  #   
+  #   if (cookies['note-' + @note.id.to_s] == @note.id.to_s)
+  #     @note_id = @note.id
+  #     @note.destroy
+  #   end
+  # end
   
   private
   
   def sorted_notes
     @notes = Note.find(:all, :order => 'created_at ASC')
-  end
-  
-  def editable_notes(notes)
-    # which notes are editable based on cookie
-    for note in notes
-      note.editable = cookies['note-' + note.id.to_s].nil? ? false : true
-    end
-    
-    @notes = notes
   end
   
 end
